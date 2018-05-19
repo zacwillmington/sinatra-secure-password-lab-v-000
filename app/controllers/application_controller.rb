@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
     if user.username.empty? || user.password_digest == nil
         redirect to '/failure'
     else
-        # user.save && !user.username.empty?
+            user.
             session[:user_id] = user.id
             redirect to '/login'
 
