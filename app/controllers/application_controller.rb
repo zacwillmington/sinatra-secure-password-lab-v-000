@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
     binding.pry
     if user.username.empty? || user.password.empty?
         erb :failure
+        binding.pry
     else
         # user.save && !user.username.empty?
             session[:user_id] = user.id
