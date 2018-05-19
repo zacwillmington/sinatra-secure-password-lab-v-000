@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
         binding.pry
     else
         # user.save && !user.username.empty?
+        binding.pry
             session[:user_id] = user.id
             redirect to '/login'
 
