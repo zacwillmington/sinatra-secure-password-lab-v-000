@@ -41,6 +41,7 @@ class ApplicationController < Sinatra::Base
   post "/login" do
     ##your code here
     user = User.find_by(:username => params[:username])
+    binding.pry
     if session[:user_id] == user.id && !params[:username].empty? && !params[:password].empty?
         erb  :login
     else
