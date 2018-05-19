@@ -18,7 +18,6 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     user = User.new(:username => params[:username], :password => params[:password])
-    binding.pry
     if user.username.empty? || user.password.empty?
         erb :failure
     else
