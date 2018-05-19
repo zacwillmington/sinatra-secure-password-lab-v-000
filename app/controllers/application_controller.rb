@@ -23,9 +23,8 @@ class ApplicationController < Sinatra::Base
     if user.username.empty? || user.password_digest == nil
         redirect to '/failure'
     else
-            user.
-            session[:user_id] = user.id
-            redirect to '/login'
+        session[:user_id] = user.id
+        redirect to '/login'
 
     end
   end
