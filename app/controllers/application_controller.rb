@@ -39,8 +39,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    ##your code heresession[:user_id] == user.id && 
+    ##your code heresession[:user_id] == user.id &&
     user = User.find_by(:username => params[:username])
+    binding.pry
     if !params[:username].empty? && !params[:password].empty? && user.authenticate(params[:password])
         redirect to '/account'
     else
