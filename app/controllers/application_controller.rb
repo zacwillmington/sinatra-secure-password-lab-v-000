@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     user = User.new(:username => params[:username], :password => params[:password])
     binding.pry
     if user.username.empty? || user.password_digest.empty?
-        redirect to '/failure'
+        erb :failure
         binding.pry
     else
         # user.save && !user.username.empty?
