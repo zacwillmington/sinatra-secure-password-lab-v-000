@@ -41,8 +41,8 @@ class ApplicationController < Sinatra::Base
   post "/login" do
     ##your code here
     user = User.find_by(:username => params[:username])
-    if session[:user_id] == user.id && !params[:username].empty?
-        
+    if session[:user_id] == user.id && !params[:username].empty? && !params[:password].empty?
+
     redirect to '/login'
 
     else
