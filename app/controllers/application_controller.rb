@@ -25,7 +25,6 @@ class ApplicationController < Sinatra::Base
     else
         session[:user_id] = user.id
         redirect to '/login'
-
     end
   end
 
@@ -41,6 +40,13 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     ##your code here
+    user = User.find_by(:username => params[:username])
+    if session[:user_id] == user.id && !params[:username].empty?
+        
+    redirect to '/login'
+
+    else
+        redirect to '/failure'
   end
 
   get "/failure" do
